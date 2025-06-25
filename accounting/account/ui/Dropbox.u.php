@@ -57,7 +57,14 @@ class DropboxUi {
 
 			}
 
-			$h .= '<a href="'.$partnerData['authorizationUrl'].'" class="btn btn-primary">'.s("Autoriser {siteName} à accéder à Dropbox").'</a>';
+			if(OTF_DEMO) {
+
+				$h .= '<a href="" class="btn btn-primary disabled">'.s("Autoriser {siteName} à accéder à Dropbox (désactivé sur la démo)").'</a>';
+			} else {
+
+				$h .= '<a href="'.$partnerData['authorizationUrl'].'" class="btn btn-primary">'.s("Autoriser {siteName} à accéder à Dropbox").'</a>';
+
+			}
 
 		}
 
